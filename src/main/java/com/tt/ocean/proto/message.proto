@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package com.tt.ocean.proto;
+
+option java_package = "com.tt.ocean.proto";
+option java_outer_classname = "MessageProto";
+
+message Header{
+    required int32  version = 1;
+    required int64  req_id = 2;
+    optional int64  rsp_id = 3;
+    optional int64  prs_id = 4;
+    optional int32  piece_id = 5;
+}
+
+
+message HeartbeatReq{
+
+
+    optional  string my_type = 1;
+
+    optional  int64  cpu_id = 2;
+    optional  double cpu_rate = 3;
+    optional  int64  memory = 4;
+
+    optional  int64  process_id = 5;
+    optional  int64  piece_id = 6;
+
+}
