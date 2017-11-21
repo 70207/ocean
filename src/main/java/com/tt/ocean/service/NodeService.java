@@ -8,7 +8,7 @@ public interface NodeService {
     public void onDisconnected(Long conId);
 
 
-    public void onAuthed(Long conId, ConfigMessage msg);
-    public void onNodeNotify(Long conId, ConfigMessage msg);
-    public void onNodeGot(Long conId, ConfigMessage msg);
+    public void onAuthed(Long conId, ConfigMessage req);
+    public void onNodeNotify(Long conId, ConfigMessage req);
+    public void onNodeGot(Long conId, ConfigMessage req);
 }

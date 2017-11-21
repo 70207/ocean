@@ -31,7 +31,7 @@ public class Route {
         log.info("on disconnected but not implemented");
     }
 
-    public  void onRoute(Long conId, ChannelHandlerContext ctx, ConfigMessage message){
+    public  void onRoute(Long conId, ChannelHandlerContext ctx, ConfigMessage req){
         log.info("on route but not implemented");
     }
 

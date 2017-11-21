@@ -17,32 +17,32 @@ public class ConfigRoute extends Route implements ConfigService{
     }
 
     @Override
-    public  void onConnected(Long conId)
+    public  void onConnected(Long conId, ChannelHandlerContext ctx)
     {
         log.info("on Connected con id:" + conId);
-        service.onConnected(conId);
+        service.onConnected(conId, ctx);
     }
 
     @Override
-    public  void onDisconnected(Long conId)
+    public  void onDisconnected(Long conId, ChannelHandlerContext ctx)
     {
         log.info("on disconnected con id:" + conId);
-        service.onDisconnected(conId);
+        service.onDisconnected(conId, ctx);
     }
 
     @Override
-    public  void onRoute(Long conId, ChannelHandlerContext ctx, ConfigProto.ConfigMessage message){
+    public  void onRoute(Long conId, ChannelHandlerContext ctx, ConfigProto.ConfigMessage req){
         log.info("on route con id:"+ conId);
-        if(!message.hasConfigRequest()){
+        if(!req.hasConfigRequest()){
             log.warn("route but not has config request");
             return;
         }
 
-        if(message.getConfigRequest().hasAuth()){
-            onAuthing(conId, message);
+        if(req.getConfigRequest().hasAuth()){
+            onAuthing(conId, ctx, req);
         }
-        else if(message.getConfigRequest().hasGetNodes()){
-            onGetNodes(conId, message);
+        else if(req.getConfigRequest().hasGetNodes()){
+            onGetNodes(conId, ctx, req);
         }
         else{
             log.warn("route but not has deal request");
@@ -51,14 +51,15 @@ public class ConfigRoute extends Route implements ConfigService{
     }
 
     @Override
-    public void onAuthing(Long conId, ConfigProto.ConfigMessage msg) {
+    public void onAuthing(Long conId, ChannelHandlerContext ctx, ConfigProto.ConfigMessage req) {
         log.info("on authing con id:" + conId);
-        service.onAuthing(conId, msg);
+        service.onAuthing(conId, ctx, req);
     }
 
     @Override
-    public void onGetNodes(Long conId, ConfigProto.ConfigMessage msg) {
+    public void onGetNodes(Long conId, ChannelHandlerContext ctx, ConfigProto.ConfigMessage msg) {
         log.info("on get nodes, con id:" + conId);
-        service.onGetNodes(conId, msg);
+        service.onGetNodes(conId, ctx, msg);
     }
+
 }

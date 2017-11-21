@@ -33,22 +33,22 @@ public class NodeRoute extends Route implements NodeService {
 
 
     @Override
-    public  void onRoute(Long conId, ChannelHandlerContext ctx, ConfigProto.ConfigMessage message){
+    public  void onRoute(Long conId, ChannelHandlerContext ctx, ConfigProto.ConfigMessage req){
         log.info("on route con id:" + conId);
 
-        if(!message.hasConfigResponse()){
+        if(!req.hasConfigResponse()){
             log.warn("route but not has config response");
             return;
         }
 
-        if(message.getConfigResponse().hasAuth()){
-            onAuthed(conId, message);
+        if(req.getConfigResponse().hasAuth()){
+            onAuthed(conId, req);
         }
-        else if(message.getConfigResponse().hasGetNodes()){
-            onNodeGot(conId, message);
+        else if(req.getConfigResponse().hasGetNodes()){
+            onNodeGot(conId, req);
         }
-        else if(message.getConfigResponse().hasNotifyNodes()){
-            onNodeNotify(conId, message);
+        else if(req.getConfigResponse().hasNotifyNodes()){
+            onNodeNotify(conId, req);
         }
         else {
             log.warn("route but not has deal request");
@@ -57,20 +57,20 @@ public class NodeRoute extends Route implements NodeService {
     }
 
     @Override
-    public void onAuthed(Long conId, ConfigProto.ConfigMessage msg) {
+    public void onAuthed(Long conId, ConfigProto.ConfigMessage req) {
         log.info("on config authed, con id:" + conId);
-        service.onAuthed(conId, msg);
+        service.onAuthed(conId, req);
     }
 
     @Override
-    public void onNodeNotify(Long conId, ConfigProto.ConfigMessage msg) {
+    public void onNodeNotify(Long conId, ConfigProto.ConfigMessage req) {
         log.info("on config node notify, con id:" + conId);
-        service.onNodeNotify(conId, msg);
+        service.onNodeNotify(conId, req);
     }
 
     @Override
-    public void onNodeGot(Long conId, ConfigProto.ConfigMessage msg) {
+    public void onNodeGot(Long conId, ConfigProto.ConfigMessage req) {
         log.info("on node got, con id:" + conId);
-        service.onNodeGot(conId, msg);
+        service.onNodeGot(conId, req);
     }
 }
