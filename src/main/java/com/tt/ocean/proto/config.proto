@@ -5,31 +5,20 @@ package com.tt.ocean.proto;
 option java_package = "com.tt.ocean.proto";
 option java_outer_classname = "ConfigProto";
 
-import "message.proto";
-
-message ConfigMessage{
-    required Header header = 1;
-
-    optional HeartbeatReq heartbeat= 6;
-    optional ConfigRequest config_request = 2;
-    optional ConfigResponse config_response = 3;
-
-}
-
-
 
 
 
 message ConfigRequest{
     optional ConfigAuthReq      auth= 1;
     optional ConfigGetNodesReq  get_nodes= 2;
+    optional ConfigSubscribeReq subscribe = 3;
 
 }
 
 message ConfigResponse{
     optional ConfigAuthRsp      auth = 1;
     optional ConfigGetNodesRsp  get_nodes= 2;
-    optional ConfigNotifyNodes  notify_nodes= 3;
+    optional ConfigNotifyNode   notify_node= 3;
 
 }
 
@@ -53,12 +42,16 @@ message ConfigGetNodesReq{
     required  string node_type = 1;
 }
 
-message ConfigNodesInfo{
+message ConfigSubscribeReq{
+    required  string node_type = 1;
+}
+
+message ConfigNodeInfo{
     required  int32     version = 1;
     required  string    node_type = 2;
     required  int64     prs_id = 3;
     required  int32     piece_id = 4;
-    required  string    ip = 5;
+    required  string    addr = 5;
     required  int32     port = 6;
     optional  int32     conn_num = 7;
 
@@ -66,19 +59,24 @@ message ConfigNodesInfo{
 
 
 message ConfigGetNodesRsp{
-    repeated  ConfigNodesInfo nodes = 1;
+    repeated  ConfigNodeInfo nodes = 1;
 }
 
 
-message ConfigNotifyNodes{
+message ConfigNotifyNode{
 
     enum ConfigNotifyType{
         ONLINE = 1;
         OFFLINE = 2;
     }
-    required    string                  node_type = 1;
-    required    ConfigNotifyType        notify_type = 2;
-    required    int32                   piece_id = 3;
-    required    string                  ip = 4;
-    required    int32                   port = 5;
+
+    required    ConfigNotifyType        notify_type = 1;
+
+    required  int32                     version = 2;
+    required  string                    node_type = 3;
+    required  int64                     prs_id = 4;
+    required  int32                     piece_id = 5;
+    required  string                    addr = 6;
+    required  int32                     port = 7;
+    optional  int32                     conn_num = 8;
 }

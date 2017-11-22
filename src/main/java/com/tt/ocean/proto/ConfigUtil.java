@@ -1,11 +1,12 @@
 package com.tt.ocean.proto;
 
+import com.tt.ocean.proto.OceanProto.*;
 import com.tt.ocean.proto.ConfigProto.*;
 
 public class ConfigUtil {
 
-    public static ConfigMessage createAuthRsp(ConfigMessage req, ConfigAuthRsp msg){
-        return ConfigMessage.newBuilder()
+    public static OceanMessage createAuthRsp(OceanMessage req, ConfigAuthRsp msg){
+        return OceanMessage.newBuilder()
                 .setHeader(MessageUtil.getRspHeader(req.getHeader()))
                 .setConfigResponse(ConfigResponse.newBuilder()
                                     .setAuth(msg).build())
@@ -13,8 +14,8 @@ public class ConfigUtil {
     }
 
 
-    public static ConfigMessage createGetNodesRsp(ConfigMessage req, ConfigGetNodesRsp msg){
-        return ConfigMessage.newBuilder()
+    public static OceanMessage createGetNodesRsp(OceanMessage req, ConfigGetNodesRsp msg){
+        return OceanMessage.newBuilder()
                 .setHeader(MessageUtil.getRspHeader(req.getHeader()))
                 .setConfigResponse(ConfigResponse.newBuilder()
                 .setGetNodes(msg).build())
@@ -22,11 +23,19 @@ public class ConfigUtil {
     }
 
 
-    public static ConfigMessage createNotifyNodeChange(ConfigNotifyNodes msg){
-        return ConfigMessage.newBuilder()
+    public static OceanMessage createNotifyNodeChange(ConfigNotifyNode msg){
+        return OceanMessage.newBuilder()
                 .setHeader(MessageUtil.createHeader())
                 .setConfigResponse(ConfigResponse.newBuilder()
-                .setNotifyNodes(msg).build())
+                .setNotifyNode(msg).build())
+                .build();
+    }
+
+
+
+    public static OceanMessage createResponse(OceanMessage req){
+        return OceanMessage.newBuilder()
+                .setHeader(MessageUtil.getRspHeader(req.getHeader()))
                 .build();
     }
 }

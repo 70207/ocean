@@ -1,15 +1,10 @@
 package com.tt.ocean.client;
 
 
-import com.tt.ocean.route.NodeRoute;
-import com.tt.ocean.route.Route;
+
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -60,31 +55,31 @@ public class Client {
                     .channel(NioSocketChannel.class)
                     .handler(new ClientIntializer());
 
-            Channel c = b.connect(ip, port).sync().channel();
+//            Channel c = b.connect(ip, port).sync().channel();
+//
+//            HandlerForConfig handler = c.pipeline().get(HandlerForConfig.class);
+//            handler.sendResponse().addListener((ChannelFuture f)->{
+//                log.info("channel send response, id:" + f.channel().id().asLongText());
+//            });
+//            handler.sendResponse().addListener((ChannelFuture f)->{
+//                log.info("channel send response, id:" + f.channel().id().asLongText());
+//            });
+//            c.close();
 
-            ClientHandler handler = c.pipeline().get(ClientHandler.class);
-            handler.sendResponse().addListener((ChannelFuture f)->{
-                log.info("channel send response, id:" + f.channel().id().asLongText());
-            });
-            handler.sendResponse().addListener((ChannelFuture f)->{
-                log.info("channel send response, id:" + f.channel().id().asLongText());
-            });
-            c.close();
-
-            c = b.connect(ip, port).sync().channel();
-
-            handler = c.pipeline().get(ClientHandler.class);
-            handler.sendResponse().addListener((ChannelFuture f)->{
-                            log.info("channel send response, id:" + f.channel().id().asLongText());
-                    });
-
-            handler.sendResponse().addListener((ChannelFuture f)->{
-                log.info("channel send response, id:" + f.channel().id().asLongText());
-            });
-
-            c.close().addListener(f->{
-                log.info("close connection");
-            });
+//            c = b.connect(ip, port).sync().channel();
+//
+//            handler = c.pipeline().get(HandlerForConfig.class);
+//            handler.sendResponse().addListener((ChannelFuture f)->{
+//                            log.info("channel send response, id:" + f.channel().id().asLongText());
+//                    });
+//
+//            handler.sendResponse().addListener((ChannelFuture f)->{
+//                log.info("channel send response, id:" + f.channel().id().asLongText());
+//            });
+//
+//            c.close().addListener(f->{
+//                log.info("close connection");
+//            });
 
         } finally {
 
@@ -97,7 +92,7 @@ public class Client {
     public static void main(String[] args)
             throws Exception
     {
-        Route.setInstance(new NodeRoute());
+       // Route.setInstance(new RouteForConfig());
         Client client = new Client();
         log.info("connect to ip:" + __config_server_ip);
         log.info("connect to port:" + __config_server_port);

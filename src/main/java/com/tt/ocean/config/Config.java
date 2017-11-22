@@ -4,11 +4,11 @@ import com.tt.ocean.common.CommonList;
 import com.tt.ocean.config.cache.ConnCache;
 import com.tt.ocean.config.cache.ConnContext;
 import com.tt.ocean.config.cache.TypeCache;
-import com.tt.ocean.proto.ConfigProto.*;
 import com.tt.ocean.proto.ConfigUtil;
-import com.tt.ocean.proto.ConfigProto.ConfigMessage;
+import com.tt.ocean.proto.OceanProto.*;
+import com.tt.ocean.proto.ConfigProto.*;
 
-import com.tt.ocean.service.ConfigService;
+import com.tt.ocean.config.service.ConfigService;
 import com.tt.ocean.status.Status;
 import io.netty.channel.ChannelHandlerContext;
 import org.apache.logging.log4j.LogManager;
@@ -60,39 +60,56 @@ public class Config implements ConfigService {
         __connCache.removeContext(conId);
 
 
-        notifyNode(conn, ConfigNotifyNodes.ConfigNotifyType.OFFLINE);
+        notifyNode(conn, ConfigNotifyNode.ConfigNotifyType.OFFLINE);
 
 
     }
 
-    public void notifyNode(ConnContext conn, ConfigNotifyNodes.ConfigNotifyType type){
-        ConfigNotifyNodes msg = ConfigNotifyNodes.newBuilder()
+    public void notifyNode(ConnContext conn, ConfigNotifyNode.ConfigNotifyType type){
+        ConfigNotifyNode msg = ConfigNotifyNode.newBuilder()
                 .setPieceId(conn.pieceID)
+                .setAddr(conn.addr)
+                .setAddr(conn.addr)
                 .setPort(conn.port)
-                .setIp(conn.addr)
+                .setConnNum(0)
+                .setPrsId(conn.prsID)
+                .setVersion(conn.version)
                 .setNodeType(conn.getType())
                 .setNotifyType(type)
                 .build();
 
-        ConfigMessage rsp = ConfigUtil.createNotifyNodeChange(msg);
+        OceanMessage rsp = ConfigUtil.createNotifyNodeChange(msg);
+
+        TypeCache tc = __typeCache.get(conn.getType());
+
+
+        if(tc == null){
+            log.warn("notify node but no these type cache");
+            return;
+        }
+
+        CommonList list = tc.listForSubscribe.next;
+        while(list.object != null) {
+            ConnContext cc = (ConnContext) list.object;
+            cc.writeAndFlush(rsp);
+
+            list = list.next;
+        }
 
 
     }
 
 
 
-
-
-
     @Override
-    public void onAuthing(Long conId, ChannelHandlerContext ctx, ConfigMessage req) {
+    public void onAuthing(Long conId, ChannelHandlerContext ctx, OceanMessage req) {
         ConnContext conn = __connCache.getContext(conId);
 
         if(ctx == null){
             log.warn("on authing, con id:" + conId);
 
 
-            ConfigMessage rsp = ConfigUtil.createAuthRsp(req,
+            OceanMessage rsp = ConfigUtil.createAuthRsp(req,
                     ConfigAuthRsp.newBuilder()
                     .setStatus(Status.OK)
                     .build());
@@ -107,7 +124,7 @@ public class Config implements ConfigService {
         String type = req.getConfigRequest().getAuth().getNodeType();
         if(type == null || type.length() <= 0){
             log.info("on authing failed, type is null, con id:" + conId);
-            ConfigMessage rsp = ConfigUtil.createAuthRsp(req,
+            OceanMessage rsp = ConfigUtil.createAuthRsp(req,
                     ConfigAuthRsp.newBuilder()
                             .setStatus(Status.PARAM_ERROR)
                             .build());
@@ -128,9 +145,9 @@ public class Config implements ConfigService {
         }
 
         tc.addContext(conn);
-        conn.auth(req.getConfigRequest().getAuth().getNodeType());
+        conn.auth(ctx, req.getConfigRequest().getAuth().getNodeType());
 
-        ConfigMessage rsp = ConfigUtil.createAuthRsp(req,
+        OceanMessage rsp = ConfigUtil.createAuthRsp(req,
                 ConfigAuthRsp.newBuilder()
                         .setStatus(Status.OK)
                         .build());
@@ -138,12 +155,12 @@ public class Config implements ConfigService {
         ctx.writeAndFlush(rsp);
 
 
-        notifyNode(conn, ConfigNotifyNodes.ConfigNotifyType.ONLINE);
+        notifyNode(conn, ConfigNotifyNode.ConfigNotifyType.ONLINE);
 
     }
 
     @Override
-    public void onGetNodes(Long conId, ChannelHandlerContext ctx, ConfigMessage req) {
+    public void onGetNodes(Long conId, ChannelHandlerContext ctx, OceanMessage req) {
         ConnContext conn = __connCache.getContext(conId);
         if(ctx == null){
             log.warn("on authing, con id:" + conId);
@@ -175,18 +192,56 @@ public class Config implements ConfigService {
         CommonList list = tc.list.next;
         while(list.object != null){
             ConnContext cc = (ConnContext)list.object;
-            builder.addNodes(ConfigNodesInfo.newBuilder()
+            builder.addNodes(ConfigNodeInfo.newBuilder()
                     .setPieceId(cc.pieceID)
+                    .setAddr(cc.addr)
+                    .setAddr(cc.addr)
                     .setPort(cc.port)
                     .setConnNum(0)
                     .setPrsId(cc.prsID)
                     .setVersion(cc.version)
                     .setNodeType(cc.getType())
                     .build());
+
+            list = list.next;
         }
 
 
         ctx.writeAndFlush(ConfigUtil.createGetNodesRsp(req, builder.build()));
 
     }
+
+    @Override
+    public void onSubscribe(Long conId, ChannelHandlerContext ctx, OceanMessage req) {
+        ConnContext conn = __connCache.getContext(conId);
+        if(ctx == null){
+            log.warn("on subscibe, con id:" + conId);
+            ctx.writeAndFlush(ConfigUtil.createResponse(req));
+            return;
+        }
+
+        onFilter(conn);
+        String type = req.getConfigRequest().getGetNodes().getNodeType();
+        if(type == null || type.length() <= 0){
+            log.info("on get nodes failed, type is null, con id:" + conId);
+            ctx.writeAndFlush(ConfigUtil.createResponse(req));
+            return;
+        }
+
+        conn.subscribe(type);
+
+
+        TypeCache tc = __typeCache.get(type);
+        if(tc == null){
+            tc = new TypeCache(type);
+            __typeCache.put(type, tc);
+        }
+
+        tc.addSubscribe(conn);
+
+        ctx.writeAndFlush(ConfigUtil.createResponse(req));
+    }
+
+
+
 }

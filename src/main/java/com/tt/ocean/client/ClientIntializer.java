@@ -1,7 +1,7 @@
 package com.tt.ocean.client;
 
 
-import com.tt.ocean.proto.ConfigProto;
+import com.tt.ocean.proto.OceanProto;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -17,7 +17,7 @@ public class ClientIntializer extends ChannelInitializer<SocketChannel> {
         ChannelPipeline p = ch.pipeline();
 
         p.addLast(new ProtobufVarint32FrameDecoder());
-        p.addLast(new ProtobufDecoder(ConfigProto.ConfigMessage.getDefaultInstance()));
+        p.addLast(new ProtobufDecoder(OceanProto.OceanMessage.getDefaultInstance()));
 
         p.addLast(new ProtobufVarint32LengthFieldPrepender());
         p.addLast(new ProtobufEncoder());

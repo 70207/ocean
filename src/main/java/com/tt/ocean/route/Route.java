@@ -1,6 +1,7 @@
 package com.tt.ocean.route;
 
-import com.tt.ocean.proto.ConfigProto.ConfigMessage;
+import com.tt.ocean.proto.OceanProto;
+
 import io.netty.channel.ChannelHandlerContext;
 
 import org.apache.logging.log4j.LogManager;
@@ -11,29 +12,23 @@ public class Route {
 
     public static Logger log = LogManager.getLogger(Route.class.getName());
 
-    public static Route instance = null;
 
-    public static Route getInstance(){
-        return new Route();
-    }
 
-    public static void setInstance(Route route){
-        instance = route;
-    }
-
-    public  void onConnected(Long conId)
+    public  void onRouteConnected(Long conId, ChannelHandlerContext ctx)
     {
         log.info("on Connected but not implemented");
     }
 
-    public  void onDisconnected(Long conId)
+    public  void onRouteDisconnected(Long conId, ChannelHandlerContext ctx)
     {
         log.info("on disconnected but not implemented");
     }
 
-    public  void onRoute(Long conId, ChannelHandlerContext ctx, ConfigMessage req){
+    public  void onRoute(Long conId, ChannelHandlerContext ctx, OceanProto.OceanMessage req){
         log.info("on route but not implemented");
     }
+
+
 
 
 }

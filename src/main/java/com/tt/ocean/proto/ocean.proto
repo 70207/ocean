@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package com.tt.ocean.proto;
+
+option java_package = "com.tt.ocean.proto";
+option java_outer_classname = "OceanProto";
+
+import "message.proto";
+import "config.proto";
+import "node.proto";
+
+message OceanMessage{
+    required Header header = 1;
+
+    optional HeartbeatReq heartbeat= 6;
+    optional ConfigRequest config_request = 2;
+    optional ConfigResponse config_response = 3;
+
+    optional NodeRequest    node_request = 4;
+    optional NodeResponse   node_response = 5;
+
+}
+
+
