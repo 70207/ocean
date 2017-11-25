@@ -39,23 +39,26 @@ public class RouteForNode extends Route implements NodeService {
         log.info("on route con id:" + conId);
 
 
+        if(req.hasNodeResponse()){
+            if(onNodeResponse(conId, ctx, req)){
+                return;
+            }
+
+            if(req.getNodeResponse().hasAuth()){
+                onNodeAuthed(conId, ctx, req);
+            }
+        }
+        else if(req.hasNodeRequest()){
+            if(req.getNodeRequest().hasAuth()){
+                onNodeAuthing(conId, ctx, req);
+            }
+        }
+        else{
+              log.warn("node route but not has deal request");
+              return;
+        }
 
 
-
-
-//        if(req.getConfigResponse().hasAuth()){
-//            onConfigAuthed(conId, ctx, req);
-//        }
-//        else if(req.getConfigResponse().hasGetNodes()){
-//            onConfigNodesGot(conId, ctx, req);
-//        }
-//        else if(req.getConfigResponse().hasNotifyNode()){
-//            onConfigNodesNotify(conId, ctx, req);
-//        }
-//        else {
-//            log.warn("route but not has deal request");
-//            return;
-//        }
     }
 
     @Override
@@ -77,9 +80,9 @@ public class RouteForNode extends Route implements NodeService {
     }
 
     @Override
-    public boolean onNodeAuthing(Long conId, ChannelHandlerContext ctx, OceanProto.OceanMessage rsp) {
-
-        return false;
+    public boolean onNodeAuthing(Long conId, ChannelHandlerContext ctx, OceanProto.OceanMessage req) {
+        log.info("on node authing con id:" + conId);
+        return service.onNodeAuthing(conId, ctx, req);
     }
 
     @Override

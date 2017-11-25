@@ -2386,13 +2386,27 @@ public final class NodeProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required int32 status = 2;</code>
+     * <code>required int32 status = 1;</code>
      */
     boolean hasStatus();
     /**
-     * <code>required int32 status = 2;</code>
+     * <code>required int32 status = 1;</code>
      */
     int getStatus();
+
+    /**
+     * <code>required string node_type = 2;</code>
+     */
+    boolean hasNodeType();
+    /**
+     * <code>required string node_type = 2;</code>
+     */
+    java.lang.String getNodeType();
+    /**
+     * <code>required string node_type = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getNodeTypeBytes();
   }
   /**
    * Protobuf type {@code com.tt.ocean.proto.NodeAuthRsp}
@@ -2408,6 +2422,7 @@ public final class NodeProto {
     }
     private NodeAuthRsp() {
       status_ = 0;
+      nodeType_ = "";
     }
 
     @java.lang.Override
@@ -2441,9 +2456,15 @@ public final class NodeProto {
               }
               break;
             }
-            case 16: {
+            case 8: {
               bitField0_ |= 0x00000001;
               status_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              nodeType_ = bs;
               break;
             }
           }
@@ -2471,19 +2492,61 @@ public final class NodeProto {
     }
 
     private int bitField0_;
-    public static final int STATUS_FIELD_NUMBER = 2;
+    public static final int STATUS_FIELD_NUMBER = 1;
     private int status_;
     /**
-     * <code>required int32 status = 2;</code>
+     * <code>required int32 status = 1;</code>
      */
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int32 status = 2;</code>
+     * <code>required int32 status = 1;</code>
      */
     public int getStatus() {
       return status_;
+    }
+
+    public static final int NODE_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object nodeType_;
+    /**
+     * <code>required string node_type = 2;</code>
+     */
+    public boolean hasNodeType() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string node_type = 2;</code>
+     */
+    public java.lang.String getNodeType() {
+      java.lang.Object ref = nodeType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          nodeType_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string node_type = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNodeTypeBytes() {
+      java.lang.Object ref = nodeType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodeType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2496,6 +2559,10 @@ public final class NodeProto {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasNodeType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -2503,7 +2570,10 @@ public final class NodeProto {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(2, status_);
+        output.writeInt32(1, status_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodeType_);
       }
       unknownFields.writeTo(output);
     }
@@ -2515,7 +2585,10 @@ public final class NodeProto {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, status_);
+          .computeInt32Size(1, status_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodeType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2538,6 +2611,11 @@ public final class NodeProto {
         result = result && (getStatus()
             == other.getStatus());
       }
+      result = result && (hasNodeType() == other.hasNodeType());
+      if (hasNodeType()) {
+        result = result && getNodeType()
+            .equals(other.getNodeType());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2552,6 +2630,10 @@ public final class NodeProto {
       if (hasStatus()) {
         hash = (37 * hash) + STATUS_FIELD_NUMBER;
         hash = (53 * hash) + getStatus();
+      }
+      if (hasNodeType()) {
+        hash = (37 * hash) + NODE_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getNodeType().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2684,6 +2766,8 @@ public final class NodeProto {
         super.clear();
         status_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
+        nodeType_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -2712,6 +2796,10 @@ public final class NodeProto {
           to_bitField0_ |= 0x00000001;
         }
         result.status_ = status_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.nodeType_ = nodeType_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2757,6 +2845,11 @@ public final class NodeProto {
         if (other.hasStatus()) {
           setStatus(other.getStatus());
         }
+        if (other.hasNodeType()) {
+          bitField0_ |= 0x00000002;
+          nodeType_ = other.nodeType_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2764,6 +2857,9 @@ public final class NodeProto {
 
       public final boolean isInitialized() {
         if (!hasStatus()) {
+          return false;
+        }
+        if (!hasNodeType()) {
           return false;
         }
         return true;
@@ -2790,19 +2886,19 @@ public final class NodeProto {
 
       private int status_ ;
       /**
-       * <code>required int32 status = 2;</code>
+       * <code>required int32 status = 1;</code>
        */
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int32 status = 2;</code>
+       * <code>required int32 status = 1;</code>
        */
       public int getStatus() {
         return status_;
       }
       /**
-       * <code>required int32 status = 2;</code>
+       * <code>required int32 status = 1;</code>
        */
       public Builder setStatus(int value) {
         bitField0_ |= 0x00000001;
@@ -2811,11 +2907,87 @@ public final class NodeProto {
         return this;
       }
       /**
-       * <code>required int32 status = 2;</code>
+       * <code>required int32 status = 1;</code>
        */
       public Builder clearStatus() {
         bitField0_ = (bitField0_ & ~0x00000001);
         status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nodeType_ = "";
+      /**
+       * <code>required string node_type = 2;</code>
+       */
+      public boolean hasNodeType() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string node_type = 2;</code>
+       */
+      public java.lang.String getNodeType() {
+        java.lang.Object ref = nodeType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            nodeType_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string node_type = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNodeTypeBytes() {
+        java.lang.Object ref = nodeType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nodeType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string node_type = 2;</code>
+       */
+      public Builder setNodeType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        nodeType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string node_type = 2;</code>
+       */
+      public Builder clearNodeType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        nodeType_ = getDefaultInstance().getNodeType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string node_type = 2;</code>
+       */
+      public Builder setNodeTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        nodeType_ = value;
         onChanged();
         return this;
       }
@@ -2903,9 +3075,9 @@ public final class NodeProto {
       " \001(\0132\037.com.tt.ocean.proto.NodeAuthRsp\"q\n" +
       "\013NodeAuthReq\022\021\n\tnode_type\030\001 \002(\t\022\020\n\010auth_" +
       "key\030\002 \002(\t\022\023\n\013auth_secret\030\003 \002(\t\022\022\n\nservic" +
-      "e_ip\030\004 \001(\t\022\024\n\014service_port\030\005 \001(\005\"\035\n\013Node" +
-      "AuthRsp\022\016\n\006status\030\002 \002(\005B\037\n\022com.tt.ocean." +
-      "protoB\tNodeProto"
+      "e_ip\030\004 \001(\t\022\024\n\014service_port\030\005 \001(\005\"0\n\013Node" +
+      "AuthRsp\022\016\n\006status\030\001 \002(\005\022\021\n\tnode_type\030\002 \002" +
+      "(\tB\037\n\022com.tt.ocean.protoB\tNodeProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2942,7 +3114,7 @@ public final class NodeProto {
     internal_static_com_tt_ocean_proto_NodeAuthRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_tt_ocean_proto_NodeAuthRsp_descriptor,
-        new java.lang.String[] { "Status", });
+        new java.lang.String[] { "Status", "NodeType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

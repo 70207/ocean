@@ -178,78 +178,78 @@
 [15:02:00:762] [INFO] - com.alibaba.magic.db.Mongo.insert(Mongo.java:62) - insert mongo, id:5a127de84b240038a37facc3
 [15:02:01:228] [INFO] - com.alibaba.magic.db.Mongo.insert(Mongo.java:62) - insert mongo, id:5a127de94b240038a37facc4
 [16:48:40:604] [INFO] - com.alibaba.magic.server.Server.main(Server.java:57) - Http Server listening on 8090 ...
-[19:15:16:905] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:33) - server ip:127.0.0.1
-[19:15:16:906] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:34) - server port:1213
-[19:15:16:907] [INFO] - com.tt.ocean.client.Client.main(Client.java:72) - connect to ip:127.0.0.1
-[19:15:16:907] [INFO] - com.tt.ocean.client.Client.main(Client.java:73) - connect to port:1213
-[19:19:35:513] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:33) - server ip:127.0.0.1
-[19:19:35:515] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:34) - server port:1213
-[19:19:35:515] [INFO] - com.tt.ocean.client.Client.main(Client.java:72) - connect to ip:127.0.0.1
-[19:19:35:515] [INFO] - com.tt.ocean.client.Client.main(Client.java:73) - connect to port:1213
-[19:20:05:698] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:29) - server ip:127.0.0.1
-[19:20:05:700] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:30) - server port:1213
-[19:20:05:700] [INFO] - com.tt.ocean.client.Client.main(Client.java:68) - connect to ip:127.0.0.1
-[19:20:05:700] [INFO] - com.tt.ocean.client.Client.main(Client.java:69) - connect to port:1213
-[19:24:20:300] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:30) - server ip:127.0.0.1
-[19:24:20:302] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server port:1213
-[19:24:20:302] [INFO] - com.tt.ocean.client.Client.main(Client.java:69) - connect to ip:127.0.0.1
-[19:24:20:302] [INFO] - com.tt.ocean.client.Client.main(Client.java:70) - connect to port:1213
-[19:24:29:289] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:30) - server ip:127.0.0.1
-[19:24:29:290] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server port:1213
-[19:24:29:291] [INFO] - com.tt.ocean.client.Client.main(Client.java:69) - connect to ip:127.0.0.1
-[19:24:29:291] [INFO] - com.tt.ocean.client.Client.main(Client.java:70) - connect to port:1213
+[19:15:16:905] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:33) - server ip:127.0.0.1
+[19:15:16:906] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:34) - server port:1213
+[19:15:16:907] [INFO] - com.tt.ocean.Client.Client.main(Client.java:72) - connect to ip:127.0.0.1
+[19:15:16:907] [INFO] - com.tt.ocean.Client.Client.main(Client.java:73) - connect to port:1213
+[19:19:35:513] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:33) - server ip:127.0.0.1
+[19:19:35:515] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:34) - server port:1213
+[19:19:35:515] [INFO] - com.tt.ocean.Client.Client.main(Client.java:72) - connect to ip:127.0.0.1
+[19:19:35:515] [INFO] - com.tt.ocean.Client.Client.main(Client.java:73) - connect to port:1213
+[19:20:05:698] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:29) - server ip:127.0.0.1
+[19:20:05:700] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:30) - server port:1213
+[19:20:05:700] [INFO] - com.tt.ocean.Client.Client.main(Client.java:68) - connect to ip:127.0.0.1
+[19:20:05:700] [INFO] - com.tt.ocean.Client.Client.main(Client.java:69) - connect to port:1213
+[19:24:20:300] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:30) - server ip:127.0.0.1
+[19:24:20:302] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server port:1213
+[19:24:20:302] [INFO] - com.tt.ocean.Client.Client.main(Client.java:69) - connect to ip:127.0.0.1
+[19:24:20:302] [INFO] - com.tt.ocean.Client.Client.main(Client.java:70) - connect to port:1213
+[19:24:29:289] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:30) - server ip:127.0.0.1
+[19:24:29:290] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server port:1213
+[19:24:29:291] [INFO] - com.tt.ocean.Client.Client.main(Client.java:69) - connect to ip:127.0.0.1
+[19:24:29:291] [INFO] - com.tt.ocean.Client.Client.main(Client.java:70) - connect to port:1213
 [19:24:34:426] [INFO] - com.tt.ocean.server.Server.<clinit>(Server.java:32) - server port:1213
 [19:24:34:430] [INFO] - com.tt.ocean.server.Server.main(Server.java:67) - Http Server listening on 1213
 [19:24:41:108] [INFO] - com.tt.ocean.server.Server.<clinit>(Server.java:32) - server port:1213
 [19:24:41:109] [INFO] - com.tt.ocean.server.Server.main(Server.java:67) - Http Server listening on 1213
-[19:24:44:594] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:30) - server ip:127.0.0.1
-[19:24:44:596] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server port:1213
-[19:24:44:596] [INFO] - com.tt.ocean.client.Client.main(Client.java:69) - connect to ip:127.0.0.1
-[19:24:44:597] [INFO] - com.tt.ocean.client.Client.main(Client.java:70) - connect to port:1213
+[19:24:44:594] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:30) - server ip:127.0.0.1
+[19:24:44:596] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server port:1213
+[19:24:44:596] [INFO] - com.tt.ocean.Client.Client.main(Client.java:69) - connect to ip:127.0.0.1
+[19:24:44:597] [INFO] - com.tt.ocean.Client.Client.main(Client.java:70) - connect to port:1213
 [19:39:04:173] [INFO] - com.tt.ocean.server.Server.<clinit>(Server.java:32) - server port:1213
 [19:39:04:175] [INFO] - com.tt.ocean.server.Server.main(Server.java:67) - Http Server listening on 1213
-[19:39:06:788] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:30) - server ip:127.0.0.1
-[19:39:06:790] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server port:1213
-[19:39:06:790] [INFO] - com.tt.ocean.client.Client.main(Client.java:71) - connect to ip:127.0.0.1
-[19:39:06:790] [INFO] - com.tt.ocean.client.Client.main(Client.java:72) - connect to port:1213
-[19:39:06:967] [INFO] - com.tt.ocean.client.Client.start(Client.java:62) - client end
+[19:39:06:788] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:30) - server ip:127.0.0.1
+[19:39:06:790] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server port:1213
+[19:39:06:790] [INFO] - com.tt.ocean.Client.Client.main(Client.java:71) - connect to ip:127.0.0.1
+[19:39:06:790] [INFO] - com.tt.ocean.Client.Client.main(Client.java:72) - connect to port:1213
+[19:39:06:967] [INFO] - com.tt.ocean.Client.Client.start(Client.java:62) - Client end
 [19:48:33:774] [INFO] - com.tt.ocean.server.Server.<clinit>(Server.java:32) - server port:1213
 [19:48:33:776] [INFO] - com.tt.ocean.server.Server.main(Server.java:67) - Http Server listening on 1213
-[19:48:35:369] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[19:48:35:371] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[19:48:35:371] [INFO] - com.tt.ocean.client.Client.main(Client.java:77) - connect to ip:127.0.0.1
-[19:48:35:372] [INFO] - com.tt.ocean.client.Client.main(Client.java:78) - connect to port:1213
-[19:48:35:525] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[19:48:35:549] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[19:48:35:569] [INFO] - com.tt.ocean.client.Client.start(Client.java:68) - client end
+[19:48:35:369] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[19:48:35:371] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[19:48:35:371] [INFO] - com.tt.ocean.Client.Client.main(Client.java:77) - connect to ip:127.0.0.1
+[19:48:35:372] [INFO] - com.tt.ocean.Client.Client.main(Client.java:78) - connect to port:1213
+[19:48:35:525] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[19:48:35:549] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[19:48:35:569] [INFO] - com.tt.ocean.Client.Client.start(Client.java:68) - Client end
 [19:50:50:608] [INFO] - com.tt.ocean.server.Server.<clinit>(Server.java:32) - server port:1213
 [19:50:50:610] [INFO] - com.tt.ocean.server.Server.main(Server.java:67) - Http Server listening on 1213
-[19:50:52:359] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[19:50:52:361] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[19:50:52:361] [INFO] - com.tt.ocean.client.Client.main(Client.java:77) - connect to ip:127.0.0.1
-[19:50:52:362] [INFO] - com.tt.ocean.client.Client.main(Client.java:78) - connect to port:1213
-[19:50:52:556] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[19:50:52:584] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[19:50:52:601] [INFO] - com.tt.ocean.client.Client.start(Client.java:68) - client end
+[19:50:52:359] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[19:50:52:361] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[19:50:52:361] [INFO] - com.tt.ocean.Client.Client.main(Client.java:77) - connect to ip:127.0.0.1
+[19:50:52:362] [INFO] - com.tt.ocean.Client.Client.main(Client.java:78) - connect to port:1213
+[19:50:52:556] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[19:50:52:584] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[19:50:52:601] [INFO] - com.tt.ocean.Client.Client.start(Client.java:68) - Client end
 [19:51:57:996] [INFO] - com.tt.ocean.server.Server.<clinit>(Server.java:32) - server port:1213
 [19:51:57:998] [INFO] - com.tt.ocean.server.Server.main(Server.java:67) - Http Server listening on 1213
-[19:51:59:785] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[19:51:59:787] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[19:51:59:787] [INFO] - com.tt.ocean.client.Client.main(Client.java:77) - connect to ip:127.0.0.1
-[19:51:59:787] [INFO] - com.tt.ocean.client.Client.main(Client.java:78) - connect to port:1213
-[19:51:59:966] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[19:51:59:979] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[19:52:00:036] [INFO] - com.tt.ocean.client.Client.start(Client.java:68) - client end
+[19:51:59:785] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[19:51:59:787] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[19:51:59:787] [INFO] - com.tt.ocean.Client.Client.main(Client.java:77) - connect to ip:127.0.0.1
+[19:51:59:787] [INFO] - com.tt.ocean.Client.Client.main(Client.java:78) - connect to port:1213
+[19:51:59:966] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[19:51:59:979] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[19:52:00:036] [INFO] - com.tt.ocean.Client.Client.start(Client.java:68) - Client end
 [19:52:00:096] [INFO] - com.tt.ocean.server.ServerHandler.channelRead(ServerHandler.java:29) - channel read
 [19:52:16:601] [INFO] - com.tt.ocean.server.Server.<clinit>(Server.java:32) - server port:1213
 [19:52:16:603] [INFO] - com.tt.ocean.server.Server.main(Server.java:67) - Http Server listening on 1213
-[19:52:20:703] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[19:52:20:705] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[19:52:20:705] [INFO] - com.tt.ocean.client.Client.main(Client.java:77) - connect to ip:127.0.0.1
-[19:52:20:705] [INFO] - com.tt.ocean.client.Client.main(Client.java:78) - connect to port:1213
-[19:52:20:855] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[19:52:20:867] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[19:52:20:936] [INFO] - com.tt.ocean.client.Client.start(Client.java:68) - client end
+[19:52:20:703] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[19:52:20:705] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[19:52:20:705] [INFO] - com.tt.ocean.Client.Client.main(Client.java:77) - connect to ip:127.0.0.1
+[19:52:20:705] [INFO] - com.tt.ocean.Client.Client.main(Client.java:78) - connect to port:1213
+[19:52:20:855] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[19:52:20:867] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[19:52:20:936] [INFO] - com.tt.ocean.Client.Client.start(Client.java:68) - Client end
 [19:52:20:978] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:20) - channel read 0
 [19:52:21:048] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - message:header {
   version: 1
@@ -269,13 +269,13 @@ heartbeat {
 
 [22:30:39:355] [INFO] - com.tt.ocean.server.Server.<clinit>(Server.java:32) - server port:1213
 [22:30:39:357] [INFO] - com.tt.ocean.server.Server.main(Server.java:67) - Http Server listening on 1213
-[22:30:42:711] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[22:30:42:713] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[22:30:42:714] [INFO] - com.tt.ocean.client.Client.main(Client.java:77) - connect to ip:127.0.0.1
-[22:30:42:714] [INFO] - com.tt.ocean.client.Client.main(Client.java:78) - connect to port:1213
-[22:30:42:866] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:30:42:897] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:30:42:941] [INFO] - com.tt.ocean.client.Client.start(Client.java:68) - client end
+[22:30:42:711] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[22:30:42:713] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[22:30:42:714] [INFO] - com.tt.ocean.Client.Client.main(Client.java:77) - connect to ip:127.0.0.1
+[22:30:42:714] [INFO] - com.tt.ocean.Client.Client.main(Client.java:78) - connect to port:1213
+[22:30:42:866] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:30:42:897] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:30:42:941] [INFO] - com.tt.ocean.Client.Client.start(Client.java:68) - Client end
 [22:30:43:019] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:30:43:019] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel id:74d435fffef9222d-00001b04-00000001-9d7f0c567f5001bb-c5322ae4
 [22:30:43:094] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:23) - message:header {
@@ -296,95 +296,95 @@ heartbeat {
 
 [22:31:03:898] [INFO] - com.tt.ocean.server.Server.<clinit>(Server.java:32) - server port:1213
 [22:31:03:900] [INFO] - com.tt.ocean.server.Server.main(Server.java:67) - Http Server listening on 1213
-[22:31:05:832] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[22:31:05:834] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[22:31:05:834] [INFO] - com.tt.ocean.client.Client.main(Client.java:77) - connect to ip:127.0.0.1
-[22:31:05:834] [INFO] - com.tt.ocean.client.Client.main(Client.java:78) - connect to port:1213
-[22:31:05:999] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:31:06:011] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:31:06:033] [INFO] - com.tt.ocean.client.Client.start(Client.java:68) - client end
+[22:31:05:832] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[22:31:05:834] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[22:31:05:834] [INFO] - com.tt.ocean.Client.Client.main(Client.java:77) - connect to ip:127.0.0.1
+[22:31:05:834] [INFO] - com.tt.ocean.Client.Client.main(Client.java:78) - connect to port:1213
+[22:31:05:999] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:31:06:011] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:31:06:033] [INFO] - com.tt.ocean.Client.Client.start(Client.java:68) - Client end
 [22:31:06:111] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:31:06:112] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel id:74d435fffef9222d-00001c14-00000001-3e5243908f505c14-dc71a46b
-[22:31:14:569] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[22:31:14:574] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[22:31:14:574] [INFO] - com.tt.ocean.client.Client.main(Client.java:77) - connect to ip:127.0.0.1
-[22:31:14:575] [INFO] - com.tt.ocean.client.Client.main(Client.java:78) - connect to port:1213
-[22:31:14:751] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:31:14:763] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:31:14:775] [INFO] - com.tt.ocean.client.Client.start(Client.java:68) - client end
+[22:31:14:569] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[22:31:14:574] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[22:31:14:574] [INFO] - com.tt.ocean.Client.Client.main(Client.java:77) - connect to ip:127.0.0.1
+[22:31:14:575] [INFO] - com.tt.ocean.Client.Client.main(Client.java:78) - connect to port:1213
+[22:31:14:751] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:31:14:763] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:31:14:775] [INFO] - com.tt.ocean.Client.Client.start(Client.java:68) - Client end
 [22:31:14:812] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:31:14:813] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel id:74d435fffef9222d-00001c14-00000002-bc77ec60ef51be40-93d536cb
-[22:32:09:425] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[22:32:09:427] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[22:32:09:427] [INFO] - com.tt.ocean.client.Client.main(Client.java:83) - connect to ip:127.0.0.1
-[22:32:09:428] [INFO] - com.tt.ocean.client.Client.main(Client.java:84) - connect to port:1213
-[22:32:09:606] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:32:09:619] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:32:09:623] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:32:09:623] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:32:09:644] [INFO] - com.tt.ocean.client.Client.start(Client.java:74) - client end
+[22:32:09:425] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[22:32:09:427] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[22:32:09:427] [INFO] - com.tt.ocean.Client.Client.main(Client.java:83) - connect to ip:127.0.0.1
+[22:32:09:428] [INFO] - com.tt.ocean.Client.Client.main(Client.java:84) - connect to port:1213
+[22:32:09:606] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:32:09:619] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:32:09:623] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:32:09:623] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:32:09:644] [INFO] - com.tt.ocean.Client.Client.start(Client.java:74) - Client end
 [22:32:09:657] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:32:09:657] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel id:74d435fffef9222d-00001c14-00000003-c9fd731c47515487-13430e72
 [22:32:09:659] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:32:09:660] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel id:74d435fffef9222d-00001c14-00000004-4dbf189c4751549d-5917f930
 [22:32:34:896] [INFO] - com.tt.ocean.server.Server.<clinit>(Server.java:32) - server port:1213
 [22:32:34:897] [INFO] - com.tt.ocean.server.Server.main(Server.java:67) - Http Server listening on 1213
-[22:32:38:380] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[22:32:38:383] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[22:32:38:384] [INFO] - com.tt.ocean.client.Client.main(Client.java:83) - connect to ip:127.0.0.1
-[22:32:38:384] [INFO] - com.tt.ocean.client.Client.main(Client.java:84) - connect to port:1213
-[22:32:38:543] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:32:38:555] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:32:38:566] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:32:38:566] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:32:38:593] [INFO] - com.tt.ocean.client.Client.start(Client.java:74) - client end
+[22:32:38:380] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[22:32:38:383] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[22:32:38:384] [INFO] - com.tt.ocean.Client.Client.main(Client.java:83) - connect to ip:127.0.0.1
+[22:32:38:384] [INFO] - com.tt.ocean.Client.Client.main(Client.java:84) - connect to port:1213
+[22:32:38:543] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:32:38:555] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:32:38:566] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:32:38:566] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:32:38:593] [INFO] - com.tt.ocean.Client.Client.start(Client.java:74) - Client end
 [22:32:38:684] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:32:38:684] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel id:74d435fffef9222d-00001e0e-00000001-484e22a1d85ec59b-5b5cdc38
 [22:32:38:684] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:32:38:686] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel id:74d435fffef9222d-00001e0e-00000002-7e2ec07ed85ec5eb-25a09f3e
 [22:33:15:245] [INFO] - com.tt.ocean.server.Server.<clinit>(Server.java:32) - server port:1213
 [22:33:15:246] [INFO] - com.tt.ocean.server.Server.main(Server.java:67) - Http Server listening on 1213
-[22:33:20:204] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[22:33:20:205] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[22:33:20:206] [INFO] - com.tt.ocean.client.Client.main(Client.java:78) - connect to ip:127.0.0.1
-[22:33:20:206] [INFO] - com.tt.ocean.client.Client.main(Client.java:79) - connect to port:1213
-[22:33:20:352] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:33:20:363] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:33:20:363] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:33:20:383] [INFO] - com.tt.ocean.client.Client.start(Client.java:69) - client end
+[22:33:20:204] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[22:33:20:205] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[22:33:20:206] [INFO] - com.tt.ocean.Client.Client.main(Client.java:78) - connect to ip:127.0.0.1
+[22:33:20:206] [INFO] - com.tt.ocean.Client.Client.main(Client.java:79) - connect to port:1213
+[22:33:20:352] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:33:20:363] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:33:20:363] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:33:20:383] [INFO] - com.tt.ocean.Client.Client.start(Client.java:69) - Client end
 [22:33:20:476] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:33:20:476] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel id:74d435fffef9222d-00001f2c-00000001-df227383885fa8e4-ca9f81a7
 [22:33:20:486] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:33:20:486] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel id:74d435fffef9222d-00001f2c-00000001-df227383885fa8e4-ca9f81a7
 [22:34:47:031] [INFO] - com.tt.ocean.server.Server.<clinit>(Server.java:32) - server port:1213
 [22:34:47:033] [INFO] - com.tt.ocean.server.Server.main(Server.java:67) - Http Server listening on 1213
-[22:34:50:023] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[22:34:50:025] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[22:34:50:025] [INFO] - com.tt.ocean.client.Client.main(Client.java:78) - connect to ip:127.0.0.1
-[22:34:50:026] [INFO] - com.tt.ocean.client.Client.main(Client.java:79) - connect to port:1213
-[22:34:50:170] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:34:50:199] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:34:50:200] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:34:50:237] [INFO] - com.tt.ocean.client.Client.start(Client.java:69) - client end
+[22:34:50:023] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[22:34:50:025] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[22:34:50:025] [INFO] - com.tt.ocean.Client.Client.main(Client.java:78) - connect to ip:127.0.0.1
+[22:34:50:026] [INFO] - com.tt.ocean.Client.Client.main(Client.java:79) - connect to port:1213
+[22:34:50:170] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:34:50:199] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:34:50:200] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:34:50:237] [INFO] - com.tt.ocean.Client.Client.start(Client.java:69) - Client end
 [22:34:50:308] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:34:50:309] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel long id:74d435fffef9222d-000020a8-00000001-e7511a7b205cc7be-343d8d48
 [22:34:50:310] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:23) - channel short id:343d8d48
 [22:34:50:318] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:34:50:318] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel long id:74d435fffef9222d-000020a8-00000001-e7511a7b205cc7be-343d8d48
 [22:34:50:319] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:23) - channel short id:343d8d48
-[22:36:31:524] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[22:36:31:526] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[22:36:31:526] [INFO] - com.tt.ocean.client.Client.main(Client.java:85) - connect to ip:127.0.0.1
-[22:36:31:526] [INFO] - com.tt.ocean.client.Client.main(Client.java:86) - connect to port:1213
-[22:36:31:692] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:36:31:703] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:36:31:704] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:36:31:710] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:36:31:712] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:36:31:712] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:36:31:524] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[22:36:31:526] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[22:36:31:526] [INFO] - com.tt.ocean.Client.Client.main(Client.java:85) - connect to ip:127.0.0.1
+[22:36:31:526] [INFO] - com.tt.ocean.Client.Client.main(Client.java:86) - connect to port:1213
+[22:36:31:692] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:36:31:703] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:36:31:704] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:36:31:710] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:36:31:712] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:36:31:712] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
 [22:36:31:749] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:36:31:750] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel long id:74d435fffef9222d-000020a8-00000002-4e861abcb45d544d-3ced4ddd
-[22:36:31:750] [INFO] - com.tt.ocean.client.Client.start(Client.java:76) - client end
+[22:36:31:750] [INFO] - com.tt.ocean.Client.Client.start(Client.java:76) - Client end
 [22:36:31:750] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:23) - channel short id:3ced4ddd
 [22:36:31:751] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:36:31:751] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel long id:74d435fffef9222d-000020a8-00000003-8dda8e4cb45d545f-d100ff25
@@ -395,17 +395,17 @@ heartbeat {
 [22:36:31:758] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:36:31:759] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel long id:74d435fffef9222d-000020a8-00000003-8dda8e4cb45d545f-d100ff25
 [22:36:31:759] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:23) - channel short id:d100ff25
-[22:45:18:560] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
-[22:45:18:562] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:32) - server port:1213
-[22:45:18:562] [INFO] - com.tt.ocean.client.Client.main(Client.java:87) - connect to ip:127.0.0.1
-[22:45:18:562] [INFO] - com.tt.ocean.client.Client.main(Client.java:88) - connect to port:1213
-[22:45:18:699] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:45:18:712] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:45:18:713] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:45:18:714] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
-[22:45:18:716] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:45:18:717] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
-[22:45:18:757] [INFO] - com.tt.ocean.client.Client.start(Client.java:78) - client end
+[22:45:18:560] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:31) - server ip:127.0.0.1
+[22:45:18:562] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:32) - server port:1213
+[22:45:18:562] [INFO] - com.tt.ocean.Client.Client.main(Client.java:87) - connect to ip:127.0.0.1
+[22:45:18:562] [INFO] - com.tt.ocean.Client.Client.main(Client.java:88) - connect to port:1213
+[22:45:18:699] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:45:18:712] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:45:18:713] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:45:18:714] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:52) - channel registered
+[22:45:18:716] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:45:18:717] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:46) - send response
+[22:45:18:757] [INFO] - com.tt.ocean.Client.Client.start(Client.java:78) - Client end
 [22:45:18:783] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:45:18:783] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel long id:74d435fffef9222d-000020a8-00000004-33204e8155a55eec-e6b7a9d4
 [22:45:18:783] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:23) - channel short id:e6b7a9d4
@@ -418,32 +418,32 @@ heartbeat {
 [22:45:18:789] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:45:18:790] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel long id:74d435fffef9222d-000020a8-00000004-33204e8155a55eec-e6b7a9d4
 [22:45:18:790] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:23) - channel short id:e6b7a9d4
-[22:45:18:791] [INFO] - com.tt.ocean.client.Client.lambda$start$0(Client.java:72) - close connection
-[22:51:40:221] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:33) - server ip:127.0.0.1
-[22:51:40:223] [INFO] - com.tt.ocean.client.Client.<clinit>(Client.java:34) - server port:1213
-[22:51:40:223] [INFO] - com.tt.ocean.client.Client.main(Client.java:99) - connect to ip:127.0.0.1
-[22:51:40:224] [INFO] - com.tt.ocean.client.Client.main(Client.java:100) - connect to port:1213
-[22:51:40:428] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:53) - channel registered
-[22:51:40:438] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:47) - send response
-[22:51:40:443] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:47) - send response
-[22:51:40:452] [INFO] - com.tt.ocean.client.ClientHandler.channelRegistered(ClientHandler.java:53) - channel registered
-[22:51:40:453] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:47) - send response
-[22:51:40:454] [INFO] - com.tt.ocean.client.ClientHandler.sendResponse(ClientHandler.java:47) - send response
-[22:51:40:474] [INFO] - com.tt.ocean.client.Client.start(Client.java:90) - client end
+[22:45:18:791] [INFO] - com.tt.ocean.Client.Client.lambda$start$0(Client.java:72) - close connection
+[22:51:40:221] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:33) - server ip:127.0.0.1
+[22:51:40:223] [INFO] - com.tt.ocean.Client.Client.<clinit>(Client.java:34) - server port:1213
+[22:51:40:223] [INFO] - com.tt.ocean.Client.Client.main(Client.java:99) - connect to ip:127.0.0.1
+[22:51:40:224] [INFO] - com.tt.ocean.Client.Client.main(Client.java:100) - connect to port:1213
+[22:51:40:428] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:53) - channel registered
+[22:51:40:438] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:47) - send response
+[22:51:40:443] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:47) - send response
+[22:51:40:452] [INFO] - com.tt.ocean.Client.ClientHandler.channelRegistered(ClientHandler.java:53) - channel registered
+[22:51:40:453] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:47) - send response
+[22:51:40:454] [INFO] - com.tt.ocean.Client.ClientHandler.sendResponse(ClientHandler.java:47) - send response
+[22:51:40:474] [INFO] - com.tt.ocean.Client.Client.start(Client.java:90) - Client end
 [22:51:40:479] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:51:40:480] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel long id:74d435fffef9222d-000020a8-00000007-40df452588af7224-4e508307
 [22:51:40:480] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:23) - channel short id:4e508307
 [22:51:40:480] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:51:40:481] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel long id:74d435fffef9222d-000020a8-00000006-d865226588af720d-a62493d9
 [22:51:40:481] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:23) - channel short id:a62493d9
-[22:51:40:487] [INFO] - com.tt.ocean.client.Client.lambda$start$0(Client.java:65) - channel send response, id:74d435fffef9222d-00002b6a-00000000-0866577588af7181-4d18a429
-[22:51:40:487] [INFO] - com.tt.ocean.client.Client.lambda$start$2(Client.java:76) - channel send response, id:74d435fffef9222d-00002b6a-00000001-2929c4e588af721c-82dd9e4c
-[22:51:40:488] [INFO] - com.tt.ocean.client.Client.lambda$start$1(Client.java:68) - channel send response, id:74d435fffef9222d-00002b6a-00000000-0866577588af7181-4d18a429
+[22:51:40:487] [INFO] - com.tt.ocean.Client.Client.lambda$start$0(Client.java:65) - channel send response, id:74d435fffef9222d-00002b6a-00000000-0866577588af7181-4d18a429
+[22:51:40:487] [INFO] - com.tt.ocean.Client.Client.lambda$start$2(Client.java:76) - channel send response, id:74d435fffef9222d-00002b6a-00000001-2929c4e588af721c-82dd9e4c
+[22:51:40:488] [INFO] - com.tt.ocean.Client.Client.lambda$start$1(Client.java:68) - channel send response, id:74d435fffef9222d-00002b6a-00000000-0866577588af7181-4d18a429
 [22:51:40:489] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
-[22:51:40:488] [INFO] - com.tt.ocean.client.Client.lambda$start$3(Client.java:80) - channel send response, id:74d435fffef9222d-00002b6a-00000001-2929c4e588af721c-82dd9e4c
+[22:51:40:488] [INFO] - com.tt.ocean.Client.Client.lambda$start$3(Client.java:80) - channel send response, id:74d435fffef9222d-00002b6a-00000001-2929c4e588af721c-82dd9e4c
 [22:51:40:489] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel long id:74d435fffef9222d-000020a8-00000007-40df452588af7224-4e508307
 [22:51:40:489] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:23) - channel short id:4e508307
 [22:51:40:490] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:21) - channel read 0
 [22:51:40:490] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:22) - channel long id:74d435fffef9222d-000020a8-00000006-d865226588af720d-a62493d9
 [22:51:40:490] [INFO] - com.tt.ocean.server.ServerHandler.channelRead0(ServerHandler.java:23) - channel short id:a62493d9
-[22:51:40:490] [INFO] - com.tt.ocean.client.Client.lambda$start$4(Client.java:84) - close connection
+[22:51:40:490] [INFO] - com.tt.ocean.Client.Client.lambda$start$4(Client.java:84) - close connection

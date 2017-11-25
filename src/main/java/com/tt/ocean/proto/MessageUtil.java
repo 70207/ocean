@@ -2,6 +2,8 @@ package com.tt.ocean.proto;
 
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverException;
 import com.tt.ocean.proto.MessageProto.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.lang.management.ManagementFactory;
@@ -14,7 +16,11 @@ public class MessageUtil {
     private static int   __pieceID = 0;
     private static int   __version = 0;
 
-    static{
+
+    private static Logger log = LogManager.getLogger(MessageUtil.class.getName());
+
+
+    public static void init(int pieceID){
         __prsID =  Integer.valueOf(ManagementFactory.getRuntimeMXBean().getName().split("@")[0]);
         ResourceBundle bundle = ResourceBundle.getBundle("config");
         if(bundle == null){
@@ -25,6 +31,8 @@ public class MessageUtil {
         if(version != null &&  !version.isEmpty()){
             __version = Integer.valueOf(version).intValue();
         }
+
+        __pieceID = pieceID;
     }
 
     public static long incrReqID(){

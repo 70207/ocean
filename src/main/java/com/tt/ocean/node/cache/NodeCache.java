@@ -1,8 +1,10 @@
 package com.tt.ocean.node.cache;
 
+import io.netty.channel.ChannelHandlerContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,6 +46,32 @@ public class NodeCache {
 
     }
 
+    public NodeInfo getNode(Long conId){
+        return __serverByID.get(conId);
+    }
+
+
+
+
+    public NodeInfo createNodeUnSafe(Long conId, ChannelHandlerContext ctx, String type, int pieceID, long prsID, int version){
+        NodeInfo node = new NodeInfo(type);
+        InetSocketAddress addr = (InetSocketAddress) ctx.channel().remoteAddress();
+        node.addr = addr.getAddress().getHostAddress();
+        node.port = addr.getPort();
+        node.pieceID = pieceID;
+        node.prsID =  prsID;
+        node.version = version;
+
+        __serverByID.put(conId, node);
+
+        Long piece = Long.valueOf(pieceID);
+        __serverIDByPiece.remove(piece);
+        __serverIDByPiece.put(piece, conId);
+
+        return node;
+
+    }
+
     private void addConfigNode(ConfigNodeInfo info){
         log.info("add config node, piece id:" + info.getPieceId() );
 
@@ -54,6 +82,8 @@ public class NodeCache {
         node.port = info.getPort();
         node.prsID = info.getPrsId();
         node.version = info.getVersion();
+
+        __configNodes.put(Long.valueOf(info.getPieceId()), node);
     }
 
     private void addConfigNode(ConfigNotifyNode info){
@@ -66,6 +96,8 @@ public class NodeCache {
         node.port = info.getPort();
         node.prsID = info.getPrsId();
         node.version = info.getVersion();
+
+        __configNodes.put(Long.valueOf(info.getPieceId()), node);
     }
 
 
@@ -114,6 +146,10 @@ public class NodeCache {
         }
 
         return info;
+    }
+
+    public void removeNodeUnsafe(NodeInfo node){
+        __serverByID.remove(node.conId);
     }
 
     public void clearWait(){

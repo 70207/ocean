@@ -15,7 +15,7 @@ public interface NodeService {
     public boolean onNodeResponse(Long conId, ChannelHandlerContext ctx, OceanMessage rsp);
 
 
-    public boolean onNodeAuthing(Long conId, ChannelHandlerContext ctx, OceanMessage rsp);
+    public boolean onNodeAuthing(Long conId, ChannelHandlerContext ctx, OceanMessage req);
     public boolean onNodeAuthed(Long conId, ChannelHandlerContext ctx, OceanMessage rsp);
 
 }

@@ -2,6 +2,7 @@ package com.tt.ocean.node;
 
 import com.sun.xml.internal.ws.handler.HandlerException;
 
+import com.tt.ocean.conf.Conf;
 import com.tt.ocean.node.cache.ConfigConnContext;
 import com.tt.ocean.node.cache.ConfigNode;
 import com.tt.ocean.node.cache.NodeCache;
@@ -11,6 +12,9 @@ import com.tt.ocean.node.route.RouteForConfig;
 
 import com.tt.ocean.node.service.ConfigService;
 import com.tt.ocean.node.service.NodeService;
+import com.tt.ocean.proto.MessageProto;
+import com.tt.ocean.proto.NodeProto;
+import com.tt.ocean.proto.NodeUtil;
 import com.tt.ocean.route.Route;
 import com.tt.ocean.status.Status;
 import io.netty.bootstrap.Bootstrap;
@@ -26,6 +30,7 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import sun.util.resources.cldr.ar.CalendarData_ar_MA;
 
 
 import javax.naming.ConfigurationException;
@@ -48,10 +53,24 @@ public class Node implements NodeService, ConfigService {
 
     private static final Logger log = LogManager.getLogger(Node.class.getName());
 
+    private String               __type;
+
+    private int                  __pieceID;
+
     private boolean              __inited = false;
 
-    public Node() throws ConfigurationException{
+    private String               __config_auth_key;
+    private String               __config_auth_secrect;
 
+
+    private String               __node_auth_key;
+    private String               __node_auth_secrect;
+
+    private Conf                 __conf;
+
+    public Node(String type, int pieceID) throws ConfigurationException, IllegalArgumentException{
+
+        __pieceID = pieceID;
         ResourceBundle bundle = ResourceBundle.getBundle("config");
         if (bundle == null) {
             throw new ConfigurationException(
@@ -73,6 +92,36 @@ public class Node implements NodeService, ConfigService {
         }
 
 
+        String configAuthKey = bundle.getString("config.auth.key");
+        String configAuthSecret = bundle.getString("config.auth.secret");
+        String nodeAuthKey = bundle.getString("node.auth.key");
+        String nodeAuthSecret = bundle.getString("node.auth.secret");
+
+
+        if(configAuthKey == null || configAuthKey.isEmpty()){
+            throw new ConfigurationException("[config.auth.key] is not found");
+        }
+
+        if(configAuthSecret == null || configAuthSecret.isEmpty()){
+            throw new ConfigurationException("[config.auth.secret] is not found");
+        }
+
+        if(nodeAuthKey == null || nodeAuthKey.isEmpty()){
+            throw new ConfigurationException("[node.auth.key] is not found");
+        }
+
+        if(nodeAuthSecret == null || nodeAuthSecret.isEmpty()){
+            throw new ConfigurationException("[node.auth.secret] is not found");
+        }
+
+
+        __config_auth_key = configAuthKey;
+        __config_auth_secrect = configAuthSecret;
+        __node_auth_key = nodeAuthKey;
+        __node_auth_secrect = nodeAuthSecret;
+
+
+        this.__type = type;
 
         __config_server_ip = ip;
         __config_server_port = port;
@@ -84,6 +133,9 @@ public class Node implements NodeService, ConfigService {
         __nodeStrap = new Bootstrap();
 
 
+
+        __conf = new Conf();
+        __conf.init(pieceID);
     }
 
     public void init(EventLoopGroup group){
@@ -152,15 +204,6 @@ public class Node implements NodeService, ConfigService {
             }
         });
 
-//        __configStrap.connect(__config_server_ip, __config_server_port).addListener(
-//                new ChannelFutureListener() {
-//                    @Override
-//                    public void operationComplete(ChannelFuture future) throws Exception {
-//
-//                    }
-//                }
-//        );
-
     }
     @Override
     public void onConfigConnected(Long conId, ChannelHandlerContext ctx) {
@@ -228,13 +271,105 @@ public class Node implements NodeService, ConfigService {
     }
 
     @Override
-    public boolean onNodeAuthing(Long conId, ChannelHandlerContext ctx, OceanMessage rsp) {
-        return false;
+    public boolean onNodeAuthing(Long conId, ChannelHandlerContext ctx, OceanMessage req) {
+
+        Long pieceID = Long.valueOf(req.getHeader().getPieceId());
+        MessageProto.Header header = req.getHeader();
+        NodeInfo node = __nodeCache.getNodeByPiece(pieceID);
+        if(node != null) {
+            if(node.conId != conId){
+                log.info("on node authing but the piece channel has been created before");
+                log.info("pieceid:" + pieceID);
+                ctx.channel().close();
+
+                NodeInfo n2 = __nodeCache.getNode(conId);
+                if(n2 != null){
+                    log.info("node cache find the node and remove it");
+                    __nodeCache.removeNodeUnsafe(n2);
+                }
+                return true;
+            }
+
+        }
+        else{
+            node = __nodeCache.getNode(conId);
+        }
+
+        if(node == null){
+
+            node = __nodeCache.createNodeUnSafe(conId, ctx, req.getNodeRequest().getAuth().getNodeType(),
+                    header.getPieceId(), header.getPrsId(), header.getVersion());
+
+
+        }
+
+        if(node == null){
+            log.error("node is null, which should not be");
+            NodeProto.NodeAuthRsp rsp = NodeProto.NodeAuthRsp.newBuilder()
+                    .setStatus(Status.FAIL)
+                    .setNodeType(__type)
+                    .build();
+
+            OceanMessage msg = NodeUtil.createAuthRsp(req, rsp);
+
+            ctx.channel().writeAndFlush(msg);
+            return true;
+        }
+        node.state = NodeInfo.STATE_AUTHED;
+
+        NodeProto.NodeAuthRsp rsp = NodeProto.NodeAuthRsp.newBuilder()
+                .setStatus(Status.OK)
+                .setNodeType(__type)
+                .build();
+
+        OceanMessage msg = NodeUtil.createAuthRsp(req, rsp);
+
+        ctx.channel().writeAndFlush(msg);
+
+        return true;
+
     }
 
     @Override
     public boolean onNodeAuthed(Long conId, ChannelHandlerContext ctx, OceanMessage rsp) {
-        return false;
+
+        Long pieceID = Long.valueOf(rsp.getHeader().getPieceId());
+        MessageProto.Header header = rsp.getHeader();
+        NodeInfo node = __nodeCache.getNodeByPiece(pieceID);
+        if(node != null) {
+            if(node.conId != conId){
+                log.info("on node authing but the piece channel has been created before");
+                log.info("pieceid:" + pieceID);
+                ctx.channel().close();
+
+                NodeInfo n2 = __nodeCache.getNode(conId);
+                if(n2 != null){
+                    log.info("node cache find the node and remove it");
+                    __nodeCache.removeNodeUnsafe(n2);
+                }
+                return true;
+            }
+
+        }
+        else{
+            node = __nodeCache.getNode(conId);
+        }
+
+        if(node == null){
+
+            node = __nodeCache.createNodeUnSafe(conId, ctx, rsp.getNodeResponse().getAuth().getNodeType(),
+                    header.getPieceId(), header.getPrsId(), header.getVersion());
+
+
+        }
+
+        if(node == null){
+            log.error("node is null, which should not be");
+            return true;
+        }
+        node.state = NodeInfo.STATE_AUTHED;
+
+        return true;
     }
 
     private void checkWaitConfigNode(){
@@ -280,6 +415,24 @@ public class Node implements NodeService, ConfigService {
 
     private void authConnect(ConfigNode node, Channel channel){
         node.state = ConfigNode.STATE_AUTHING;
+
+
+        NodeProto.NodeAuthReq auth = NodeProto.NodeAuthReq.newBuilder()
+                .setNodeType(__type)
+                .setAuthKey(__node_auth_key)
+                .setAuthSecret(__node_auth_secrect)
+                .build();
+
+        OceanMessage req = NodeUtil.createAuthReq(auth);
+
+        channel.writeAndFlush(req).addListener((ChannelFuture f)->{
+            if(f.isSuccess()){
+                log.info("auth connect to node piece:" + node.pieceID);
+            }
+            else{
+                log.info("auth connect failed to node piece:" + node.pieceID);
+            }
+        });
 
 
     }

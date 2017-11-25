@@ -29,6 +29,7 @@ message NodeAuthReq {
 
 message NodeAuthRsp{
 
-    required int32 status = 2;
+    required int32 status = 1;
+    required string node_type = 2;
 
 }

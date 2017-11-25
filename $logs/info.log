@@ -1,57 +1,18 @@
-[21:29:43:193] [INFO] - com.tt.ocean.config.app.<clinit>(app.java:25) - server port:1213
-[21:46:21:129] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:46:21:131] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:46:21:228] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:46:21:228] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:46:21:271] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:48:18:008] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:48:18:010] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:48:18:124] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:48:18:124] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:48:18:141] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:48:28:847] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:48:28:848] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:48:28:943] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:48:28:943] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:48:28:974] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:48:30:991] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:48:32:995] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:48:34:999] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:48:37:002] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:48:51:452] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:48:51:454] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:48:51:553] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:48:51:553] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:48:51:581] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:49:40:664] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:49:40:667] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:49:40:758] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:49:40:759] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:49:40:775] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:49:42:788] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:49:44:791] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:50:12:016] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:50:12:018] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:50:12:126] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:50:12:126] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:50:12:159] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:50:14:178] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:50:16:182] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:50:34:386] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:50:34:387] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:50:34:479] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:50:34:479] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:50:34:491] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:50:36:507] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:50:44:469] [INFO] - com.tt.ocean.config.app.<clinit>(app.java:25) - server port:1213
-[21:50:55:732] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:50:55:734] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:50:55:926] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:63) - server ip:127.0.0.1
-[21:50:55:926] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:64) - server port:1213
-[21:50:55:965] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:50:55:981] [INFO] - com.tt.ocean.node.route.RouteForConfig.onRouteConnected(RouteForConfig.java:27) - on Connected con id:2398116638
-[21:50:55:982] [INFO] - com.tt.ocean.node.route.RouteForConfig.onConfigConnected(RouteForConfig.java:72) - on Connected con id:2398116638
-[21:50:56:060] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
-[21:50:56:062] [INFO] - com.tt.ocean.config.route.ConfigRoute.onRouteConnected(ConfigRoute.java:23) - on Connected con id:4160688995
-[21:51:21:693] [INFO] - com.tt.ocean.node.route.RouteForConfig.onRouteDisconnected(RouteForConfig.java:36) - on disconnected con id:2398116638
-[21:51:21:694] [INFO] - com.tt.ocean.node.route.RouteForConfig.onConfigDisconnected(RouteForConfig.java:79) - on disconnected con id:2398116638
+[13:32:35:380] [INFO] - com.tt.ocean.config.app.<clinit>(app.java:25) - server port:1213
+[13:33:27:153] [INFO] - com.tt.ocean.config.app.<clinit>(app.java:25) - server port:1213
+[13:33:31:092] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:76) - server ip:127.0.0.1
+[13:33:31:095] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:77) - server port:1213
+[13:33:31:304] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:76) - server ip:127.0.0.1
+[13:33:31:308] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:77) - server port:1213
+[13:33:31:360] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
+[13:33:31:384] [INFO] - com.tt.ocean.node.route.RouteForConfig.onConfigConnected(RouteForConfig.java:70) - on Connected con id:4100396562
+[13:33:31:492] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
+[13:33:31:493] [INFO] - com.tt.ocean.config.route.ConfigRoute.onRouteConnected(ConfigRoute.java:23) - on Connected con id:940748372
+[13:33:45:988] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:76) - server ip:127.0.0.1
+[13:33:45:992] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:77) - server port:1213
+[13:33:46:196] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:76) - server ip:127.0.0.1
+[13:33:46:197] [INFO] - com.tt.ocean.node.Node.<init>(Node.java:77) - server port:1213
+[13:33:46:251] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
+[13:33:46:253] [INFO] - com.tt.ocean.node.route.RouteForConfig.onConfigConnected(RouteForConfig.java:70) - on Connected con id:2244838278
+[13:33:46:261] [INFO] - com.tt.ocean.net.Handler.channelRegistered(Handler.java:23) - channel registered
+[13:33:46:261] [INFO] - com.tt.ocean.config.route.ConfigRoute.onRouteConnected(ConfigRoute.java:23) - on Connected con id:4249417386

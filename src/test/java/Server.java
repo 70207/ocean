@@ -1,5 +1,6 @@
-package com.tt.ocean.net;
-
+import com.tt.ocean.net.Handler;
+import com.tt.ocean.node.Node;
+import com.tt.ocean.node.route.RouteForNode;
 import com.tt.ocean.proto.OceanProto;
 import com.tt.ocean.route.Route;
 import io.netty.bootstrap.ServerBootstrap;
@@ -18,27 +19,36 @@ import io.netty.handler.logging.LoggingHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.naming.ConfigurationException;
 
-public class Server {
+public class Server extends Node {
 
-    private static Logger log = LogManager.getLogger(Server.class.getName());
+    private static final Logger log = LogManager.getLogger(Server.class.getName());
+
+    public Server() throws ConfigurationException, IllegalArgumentException {
+        super("server", 1);
+
+    }
 
 
-
-    public void start(Route route, int port)
-            throws Exception
-    {
-
+    public static void main(String[] args) {
 
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
+
         try {
+
+            new Server().init(workerGroup);
+            Route route = new RouteForNode(new Client());
+            Handler handler = new Handler();
+            handler.setRoute(route);
+
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
                     .handler(new LoggingHandler(LogLevel.INFO))
-                    .childHandler(new ChannelInitializer<SocketChannel>(){
+                    .childHandler(new ChannelInitializer<SocketChannel>() {
 
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
@@ -51,14 +61,22 @@ public class Server {
                             p.addLast(new ProtobufVarint32LengthFieldPrepender());
                             p.addLast(new ProtobufEncoder());
 
-                            Handler handler = new Handler();
-                            handler.route = route;
                             p.addLast(handler);
                         }
                     });
 
-            b.bind(port).sync().channel().closeFuture().sync();
-        } finally {
+            b.bind(1215).sync().channel().closeFuture().sync();
+
+        } catch (ConfigurationException ex) {
+            log.error("Client create failed, ex:" + ex.getMessage());
+
+        } catch (InterruptedException ex) {
+            log.error("interupption ex:" + ex.getMessage());
+        }
+        catch (IllegalArgumentException ex){
+            log.error("augugent ex:" + ex.getMessage());
+        }
+        finally {
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();
         }
