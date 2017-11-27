@@ -14,7 +14,7 @@ public class CommonList {
 
     public void addChild(CommonList list){
         list.pre = this;
-        list.next.pre = list;
+        this.next.pre = list;
 
         list.next = this.next;
         this.next = list;
@@ -23,8 +23,8 @@ public class CommonList {
     public void removeFromParent(){
         pre.next = next;
         next.pre = pre;
-        pre = null;
-        next = null;
+        pre = this;
+        next = this;
     }
 
     public void setObject(Object object){

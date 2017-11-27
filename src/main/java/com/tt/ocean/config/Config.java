@@ -52,7 +52,7 @@ public class Config implements ConfigService {
 
     @Override
     public void onDisconnected(Long conId, ChannelHandlerContext ctx) {
-        ConnContext conn = __connCache.createContext(conId);
+        ConnContext conn = __connCache.getContext(conId);
         if(conn == null){
             log.warn("on disconnected but not have conn, con id:" + conId );
             return;
@@ -60,6 +60,7 @@ public class Config implements ConfigService {
         __connCache.removeContext(conId);
 
 
+        log.info("notify offline");
         notifyNode(conn, ConfigNotifyNode.ConfigNotifyType.OFFLINE);
 
 
@@ -88,14 +89,23 @@ public class Config implements ConfigService {
             return;
         }
 
+        int count = 0;
         CommonList list = tc.listForSubscribe.next;
         while(list.object != null) {
             ConnContext cc = (ConnContext) list.object;
             cc.writeAndFlush(rsp);
+            log.info("notify to node, piece id:", cc.pieceID);
+            count++;
 
             list = list.next;
         }
 
+        if(type == ConfigNotifyNode.ConfigNotifyType.ONLINE) {
+            log.info("notify online, to count:" + count);
+        }
+        else{
+            log.info("notify offline, to count:" + count);
+        }
 
     }
 
@@ -133,6 +143,11 @@ public class Config implements ConfigService {
 
             return;
         }
+
+        if(conn.addr == null || conn.addr.equals("127.0.0.1")){
+            conn.addr = req.getConfigRequest().getAuth().getServiceIp();
+        }
+        conn.port = req.getConfigRequest().getAuth().getServicePort();
 
         conn.pieceID = req.getHeader().getPieceId();
         conn.prsID = req.getHeader().getPrsId();
@@ -221,9 +236,9 @@ public class Config implements ConfigService {
         }
 
         onFilter(conn);
-        String type = req.getConfigRequest().getGetNodes().getNodeType();
+        String type = req.getConfigRequest().getSubscribe().getNodeType();
         if(type == null || type.length() <= 0){
-            log.info("on get nodes failed, type is null, con id:" + conId);
+            log.info("on subscribe nodes failed, type is null, con id:" + conId);
             ctx.writeAndFlush(ConfigUtil.createResponse(req));
             return;
         }

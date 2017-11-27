@@ -47,6 +47,9 @@ public class ConfigRoute extends Route implements ConfigService{
         else if(req.getConfigRequest().hasGetNodes()){
             onGetNodes(conId, ctx, req);
         }
+        else if(req.getConfigRequest().hasSubscribe()){
+            onSubscribe(conId, ctx, req);
+        }
         else{
             log.warn("route but not has deal request");
             return;

@@ -5,6 +5,34 @@ import com.tt.ocean.proto.ConfigProto.*;
 
 public class ConfigUtil {
 
+
+    public static OceanMessage createAuthReq(ConfigAuthReq msg){
+        return OceanMessage.newBuilder()
+                .setHeader(MessageUtil.createHeader())
+                .setConfigRequest(ConfigRequest.newBuilder()
+                        .setAuth(msg)
+                        .build())
+                .build();
+    }
+
+    public static OceanMessage createGetNodesReq(ConfigGetNodesReq msg){
+        return OceanMessage.newBuilder()
+                .setHeader(MessageUtil.createHeader())
+                .setConfigRequest(ConfigRequest.newBuilder()
+                        .setGetNodes(msg)
+                        .build())
+                .build();
+    }
+
+    public static OceanMessage createSubsribeReq(ConfigSubscribeReq msg){
+        return OceanMessage.newBuilder()
+                .setHeader(MessageUtil.createHeader())
+                .setConfigRequest(ConfigRequest.newBuilder()
+                        .setSubscribe(msg)
+                        .build())
+                .build();
+    }
+
     public static OceanMessage createAuthRsp(OceanMessage req, ConfigAuthRsp msg){
         return OceanMessage.newBuilder()
                 .setHeader(MessageUtil.getRspHeader(req.getHeader()))

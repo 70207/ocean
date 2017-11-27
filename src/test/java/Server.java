@@ -26,23 +26,24 @@ public class Server extends Node {
     private static final Logger log = LogManager.getLogger(Server.class.getName());
 
     public Server() throws ConfigurationException, IllegalArgumentException {
-        super("server", 1);
+        super("server", "server", 1,"127.0.0.1", 1215);
 
     }
 
 
     public static void main(String[] args) {
 
-        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+        EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
 
         try {
 
+
+
             new Server().init(workerGroup);
-            Route route = new RouteForNode(new Client());
-            Handler handler = new Handler();
-            handler.setRoute(route);
+            Route route = new RouteForNode(new Server());
+
 
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
@@ -54,6 +55,8 @@ public class Server extends Node {
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
                             ChannelPipeline p = socketChannel.pipeline();
 
+                            Handler handler = new Handler();
+                            handler.setRoute(route);
 
                             p.addLast(new ProtobufVarint32FrameDecoder());
                             p.addLast(new ProtobufDecoder(OceanProto.OceanMessage.getDefaultInstance()));

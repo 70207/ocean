@@ -1,0 +1,48 @@
+[14:31:09:591] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:38:02:124] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:38:02:160] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:0, piece id:101
+[14:38:06:168] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:1, piece id:101
+[14:38:10:174] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:2, piece id:101
+[14:39:49:071] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:39:49:110] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:0, piece id:101
+[14:39:53:122] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:1, piece id:101
+[14:39:57:126] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:2, piece id:101
+[14:40:01:131] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:3, piece id:101
+[14:40:34:826] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:40:34:864] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:0, piece id:101
+[14:40:38:872] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:1, piece id:101
+[14:40:42:878] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:2, piece id:101
+[14:40:46:884] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:3, piece id:101
+[14:52:05:763] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:52:13:947] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:53:24:269] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:53:40:850] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:54:27:115] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:54:40:585] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:55:48:355] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:55:58:394] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:56:56:337] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:57:10:841] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:57:15:081] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:57:15:117] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:0, piece id:1
+[14:57:19:126] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:1, piece id:1
+[14:57:23:132] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:172) - connect to node failed, times:2, piece id:1
+[14:58:15:374] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:58:19:851] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:58:19:876] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:174) - connect to node failed, times:0, piece id:1
+[14:58:23:884] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:174) - connect to node failed, times:1, piece id:1
+[14:58:27:889] [WARN] - com.tt.ocean.node.Node.lambda$connectNode$1(Node.java:174) - connect to node failed, times:2, piece id:1
+[14:59:19:108] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[14:59:22:763] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[16:19:50:728] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[17:11:12:568] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[17:11:20:602] [WARN] - com.tt.ocean.config.route.ConfigRoute.onRoute(ConfigRoute.java:51) - route but not has deal request
+[17:14:52:493] [WARN] - com.tt.ocean.node.route.RouteForConfig.onRoute(RouteForConfig.java:44) - route but not has config response
+[17:14:57:413] [WARN] - com.tt.ocean.node.route.RouteForConfig.onRoute(RouteForConfig.java:44) - route but not has config response
+[17:16:02:583] [WARN] - com.tt.ocean.node.route.RouteForConfig.onRoute(RouteForConfig.java:44) - route but not has config response
+[17:16:11:876] [WARN] - com.tt.ocean.node.route.RouteForConfig.onRoute(RouteForConfig.java:44) - route but not has config response
+[17:20:04:212] [WARN] - com.tt.ocean.node.route.RouteForConfig.onRoute(RouteForConfig.java:44) - route but not has config response
+[17:20:18:441] [WARN] - com.tt.ocean.node.route.RouteForConfig.onRoute(RouteForConfig.java:44) - route but not has config response
+[17:20:20:618] [WARN] - com.tt.ocean.node.route.RouteForConfig.onRoute(RouteForConfig.java:44) - route but not has config response
+[17:21:35:349] [WARN] - com.tt.ocean.node.route.RouteForConfig.onRoute(RouteForConfig.java:44) - route but not has config response
+[17:21:37:350] [WARN] - com.tt.ocean.node.route.RouteForConfig.onRoute(RouteForConfig.java:44) - route but not has config response

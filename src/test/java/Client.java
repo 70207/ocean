@@ -26,7 +26,7 @@ public class Client extends Node {
     private static final Logger log = LogManager.getLogger(Client.class.getName());
 
     public Client() throws ConfigurationException, IllegalArgumentException{
-        super("client", 101);
+        super("client", "server", 101, "127.0.0.1", 1214);
 
     }
 
@@ -41,8 +41,7 @@ public class Client extends Node {
 
             new Client().init(workerGroup);
             Route route = new RouteForNode(new Client());
-            Handler handler = new Handler();
-            handler.setRoute(route);
+
 
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
@@ -61,6 +60,8 @@ public class Client extends Node {
                             p.addLast(new ProtobufVarint32LengthFieldPrepender());
                             p.addLast(new ProtobufEncoder());
 
+                            Handler handler = new Handler();
+                            handler.setRoute(route);
                             p.addLast(handler);
                         }
                     });
