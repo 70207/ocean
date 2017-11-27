@@ -1,2 +1,0 @@
-[14:41:47:772] [ERROR] - com.alibaba.magic.server.Handler.exceptionCaught(Handler.java:96) - handle ex:null
-[14:41:47:779] [ERROR] - com.alibaba.magic.server.Handler.exceptionCaught(Handler.java:97) - [Ljava.lang.StackTraceElement;@310e8f38
